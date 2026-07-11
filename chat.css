@@ -1,0 +1,525 @@
+/* ===================================
+   CHAT SECTION
+=================================== */
+
+.chat-section{
+    margin-top:30px;
+
+    background:var(--card);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.chat-section h2{
+    margin-bottom:20px;
+}
+
+/* ===================================
+   CHAT WINDOW
+=================================== */
+
+.chat-window{
+    height:500px;
+
+    overflow-y:auto;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    border:1px solid var(--border);
+
+    scroll-behavior:smooth;
+}
+
+body.dark .chat-window{
+    background:#0f172a;
+}
+
+/* ===================================
+   MESSAGE ROW
+=================================== */
+
+.message-row{
+    display:flex;
+
+    margin-bottom:18px;
+
+    animation:fadeIn .3s ease;
+}
+
+.user-row{
+    justify-content:flex-end;
+}
+
+.ai-row{
+    justify-content:flex-start;
+}
+
+/* ===================================
+   MESSAGE BUBBLES
+=================================== */
+
+.message{
+    max-width:75%;
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    word-wrap:break-word;
+
+    position:relative;
+}
+
+/* USER MESSAGE */
+
+.user-message{
+    background:var(--primary);
+
+    color:white;
+
+    border-bottom-right-radius:6px;
+}
+
+/* AI MESSAGE */
+
+.ai-message{
+    background:white;
+
+    color:#111827;
+
+    border-bottom-left-radius:6px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+body.dark .ai-message{
+    background:#1e293b;
+    color:#fff;
+}
+
+/* ===================================
+   AVATAR
+=================================== */
+
+.avatar{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    margin-right:10px;
+}
+
+.user-avatar{
+    margin-left:10px;
+    margin-right:0;
+}
+
+/* ===================================
+   AI MESSAGE CONTAINER
+=================================== */
+
+.ai-container{
+    display:flex;
+    align-items:flex-start;
+}
+
+.user-container{
+    display:flex;
+    align-items:flex-start;
+}
+
+/* ===================================
+   TIMESTAMP
+=================================== */
+
+.timestamp{
+    font-size:11px;
+
+    margin-top:6px;
+
+    opacity:.7;
+}
+
+/* ===================================
+   CHAT INPUT AREA
+=================================== */
+
+.chat-input-container{
+    margin-top:20px;
+
+    display:flex;
+
+    gap:10px;
+
+    align-items:flex-end;
+}
+
+.chat-input{
+    flex:1;
+
+    min-height:60px;
+
+    max-height:150px;
+
+    resize:none;
+
+    padding:15px;
+
+    border:1px solid var(--border);
+
+    border-radius:15px;
+
+    font-size:15px;
+
+    outline:none;
+
+    background:var(--card);
+
+    color:var(--text);
+}
+
+.chat-input:focus{
+    border-color:var(--primary);
+}
+
+/* ===================================
+   SEND BUTTON
+=================================== */
+
+.send-btn{
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.send-btn:hover{
+    background:var(--primary-hover);
+
+    transform:scale(1.05);
+}
+
+/* ===================================
+   CHAT ACTION BUTTONS
+=================================== */
+
+.chat-actions{
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+}
+
+.chat-actions button{
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+#copyBtn{
+    background:var(--secondary);
+    color:white;
+}
+
+#downloadBtn{
+    background:var(--success);
+    color:white;
+}
+
+#clearBtn{
+    background:var(--danger);
+    color:white;
+}
+
+.chat-actions button:hover{
+    transform:translateY(-2px);
+}
+
+/* ===================================
+   THINKING ANIMATION
+=================================== */
+
+.typing{
+    display:flex;
+    gap:6px;
+
+    padding:15px;
+}
+
+.typing span{
+    width:10px;
+    height:10px;
+
+    background:var(--primary);
+
+    border-radius:50%;
+
+    animation:typingBounce 1s infinite;
+}
+
+.typing span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.typing span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes typingBounce{
+
+    0%,80%,100%{
+        transform:scale(0);
+    }
+
+    40%{
+        transform:scale(1);
+    }
+
+}
+
+/* ===================================
+   STREAMING CURSOR
+=================================== */
+
+.streaming-cursor{
+    display:inline-block;
+
+    width:2px;
+
+    height:18px;
+
+    background:var(--primary);
+
+    margin-left:3px;
+
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+
+}
+
+/* ===================================
+   MESSAGE APPEAR ANIMATION
+=================================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===================================
+   CODE BLOCKS
+=================================== */
+
+.code-block{
+    margin-top:10px;
+
+    background:#111827;
+
+    color:#f8fafc;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    overflow-x:auto;
+
+    font-family:Consolas, monospace;
+}
+
+.code-block pre{
+    white-space:pre-wrap;
+}
+
+/* ===================================
+   AI RESPONSE HEADINGS
+=================================== */
+
+.ai-message h1,
+.ai-message h2,
+.ai-message h3{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.ai-message ul{
+    margin-left:20px;
+}
+
+.ai-message li{
+    margin-bottom:6px;
+}
+
+/* ===================================
+   CHAT SEARCH BAR
+=================================== */
+
+.chat-search{
+    margin-bottom:15px;
+}
+
+.chat-search input{
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:var(--card);
+
+    color:var(--text);
+}
+
+/* ===================================
+   MESSAGE STATUS
+=================================== */
+
+.status{
+    font-size:12px;
+
+    margin-top:5px;
+
+    opacity:.7;
+}
+
+/* ===================================
+   EMPTY CHAT STATE
+=================================== */
+
+.empty-chat{
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+.empty-chat i{
+    font-size:70px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+}
+
+.empty-chat h3{
+    margin-bottom:10px;
+}
+
+.empty-chat p{
+    opacity:.7;
+}
+
+/* ===================================
+   CHAT SCROLLBAR
+=================================== */
+
+.chat-window::-webkit-scrollbar{
+    width:8px;
+}
+
+.chat-window::-webkit-scrollbar-thumb{
+    background:var(--primary);
+
+    border-radius:10px;
+}
+
+/* ===================================
+   QUICK CHAT CHIPS
+=================================== */
+
+.chat-chips{
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:15px;
+}
+
+.chat-chips button{
+    border:none;
+
+    background:#eef2ff;
+
+    color:var(--primary);
+
+    padding:8px 14px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.chat-chips button:hover{
+    background:var(--primary);
+    color:white;
+}
+
+body.dark .chat-chips button{
+    background:#334155;
+    color:#fff;
+}

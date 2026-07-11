@@ -1,0 +1,442 @@
+
+/* ===================================
+   LARGE LAPTOPS
+   1400px and below
+=================================== */
+
+@media screen and (max-width:1400px){
+
+    .card-grid{
+        grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+    }
+
+    .stats-section{
+        grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
+    }
+
+}
+
+/* ===================================
+   LAPTOPS
+   1200px and below
+=================================== */
+
+@media screen and (max-width:1200px){
+
+    .sidebar{
+        width:220px;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .chat-window{
+        height:450px;
+    }
+
+}
+
+/* ===================================
+   TABLETS
+   992px and below
+=================================== */
+
+@media screen and (max-width:992px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+
+        height:auto;
+
+        position:relative;
+
+        top:0;
+
+        padding:10px;
+    }
+
+    .sidebar ul{
+        display:flex;
+
+        overflow-x:auto;
+
+        gap:10px;
+
+        padding-bottom:5px;
+    }
+
+    .sidebar li{
+        white-space:nowrap;
+
+        min-width:max-content;
+    }
+
+    .content{
+        width:100%;
+    }
+
+    .stats-section{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .card-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .controls{
+        flex-direction:column;
+    }
+
+    .controls select{
+        width:100%;
+    }
+
+    .chat-window{
+        height:400px;
+    }
+
+}
+
+/* ===================================
+   MOBILE LANDSCAPE
+   768px and below
+=================================== */
+
+@media screen and (max-width:768px){
+
+    .top-navbar{
+        padding:0 15px;
+    }
+
+    .logo-section h2{
+        font-size:18px;
+    }
+
+    .logo{
+        width:40px;
+        height:40px;
+    }
+
+    .header-actions button{
+        width:40px;
+        height:40px;
+    }
+
+    .content{
+        padding:15px;
+    }
+
+    .card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-section{
+        grid-template-columns:1fr;
+    }
+
+    .quick-prompts{
+        justify-content:center;
+    }
+
+    .quick-prompts button{
+        width:100%;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+
+    .action-buttons button{
+        width:100%;
+    }
+
+    .chat-actions{
+        flex-direction:column;
+    }
+
+    .chat-actions button{
+        width:100%;
+    }
+
+    .message{
+        max-width:90%;
+    }
+
+    .floating-actions{
+        display:none;
+    }
+
+    .profile-modal{
+        width:95%;
+    }
+
+}
+
+/* ===================================
+   SMALL MOBILE
+   576px and below
+=================================== */
+
+@media screen and (max-width:576px){
+
+    .top-navbar{
+        flex-direction:column;
+
+        height:auto;
+
+        gap:10px;
+
+        padding:12px;
+    }
+
+    .logo-section{
+        justify-content:center;
+    }
+
+    .header-actions{
+        justify-content:center;
+    }
+
+    .content{
+        padding:12px;
+    }
+
+    .dashboard h2,
+    .chat-section h2,
+    .history-section h2{
+        font-size:20px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .card i{
+        font-size:30px;
+    }
+
+    .card h3{
+        font-size:16px;
+    }
+
+    .stat-box span{
+        font-size:24px;
+    }
+
+    .drop-zone{
+        padding:25px;
+    }
+
+    .drop-zone i{
+        font-size:35px;
+    }
+
+    textarea{
+        min-height:140px;
+        font-size:14px;
+    }
+
+    .chat-window{
+        height:350px;
+        padding:12px;
+    }
+
+    .chat-input{
+        min-height:50px;
+        font-size:14px;
+    }
+
+    .send-btn{
+        width:50px;
+        height:50px;
+    }
+
+    .floating-ai-btn{
+        width:55px;
+        height:55px;
+
+        font-size:20px;
+
+        right:15px;
+        bottom:15px;
+    }
+
+}
+
+/* ===================================
+   EXTRA SMALL MOBILE
+   420px and below
+=================================== */
+
+@media screen and (max-width:420px){
+
+    .sidebar ul{
+        gap:5px;
+    }
+
+    .sidebar li{
+        font-size:12px;
+        padding:10px;
+    }
+
+    .logo-section h2{
+        font-size:16px;
+        text-align:center;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .card h3{
+        font-size:15px;
+    }
+
+    .stat-box{
+        padding:15px;
+    }
+
+    .stat-box h3{
+        font-size:13px;
+    }
+
+    .stat-box span{
+        font-size:20px;
+    }
+
+    .quick-prompts button{
+        font-size:12px;
+    }
+
+    .history-section input{
+        font-size:13px;
+    }
+
+    .message{
+        font-size:13px;
+    }
+
+    .chat-window{
+        height:300px;
+    }
+
+}
+
+/* ===================================
+   VERY SMALL DEVICES
+   350px and below
+=================================== */
+
+@media screen and (max-width:350px){
+
+    .logo-section h2{
+        font-size:14px;
+    }
+
+    .header-actions{
+        gap:8px;
+    }
+
+    .header-actions button{
+        width:35px;
+        height:35px;
+    }
+
+    .card{
+        padding:12px;
+    }
+
+    .card i{
+        font-size:24px;
+    }
+
+    .card h3{
+        font-size:14px;
+    }
+
+    .chat-window{
+        height:260px;
+    }
+
+    textarea{
+        min-height:120px;
+    }
+
+}
+
+/* ===================================
+   LANDSCAPE PHONES
+=================================== */
+
+@media screen and (max-height:500px){
+
+    .sidebar{
+        height:auto;
+    }
+
+    .chat-window{
+        height:220px;
+    }
+
+    .floating-ai-btn{
+        bottom:10px;
+    }
+
+}
+
+/* ===================================
+   PRINT MODE
+=================================== */
+
+@media print{
+
+    .sidebar,
+    .top-navbar,
+    .floating-ai-btn,
+    .floating-actions,
+    .chat-actions,
+    .action-buttons{
+        display:none !important;
+    }
+
+    .content{
+        width:100%;
+        padding:0;
+    }
+
+    body{
+        background:white;
+    }
+
+    .chat-window,
+    .card,
+    .stat-box{
+        box-shadow:none;
+        border:1px solid #ddd;
+    }
+
+}
+
+/* ===================================
+   TOUCH DEVICES
+=================================== */
+
+@media (hover:none){
+
+    .card:hover,
+    .stat-box:hover,
+    .action-buttons button:hover,
+    .chat-actions button:hover{
+        transform:none;
+    }
+
+}
