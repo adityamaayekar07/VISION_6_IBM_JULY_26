@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Exam Prep Buddy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-navbar">
+
+        <div class="logo-section">
+            <img src="assets/logo.png" alt="logo" class="logo">
+            <h2>AI Exam Prep Buddy</h2>
+        </div>
+
+        <div class="header-actions">
+
+            <button id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <button id="profileBtn">
+                <i class="fas fa-user"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div class="container">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <ul>
+
+                <li>
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </li>
+
+                <li>
+                    <i class="fas fa-comments"></i>
+                    AI Chat
+                </li>
+
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    Summarizer
+                </li>
+
+                <li>
+                    <i class="fas fa-list-check"></i>
+                    MCQ Generator
+                </li>
+
+                <li>
+                    <i class="fas fa-clipboard-question"></i>
+                    Quiz Generator
+                </li>
+
+                <li>
+                    <i class="fas fa-user-graduate"></i>
+                    Interview Prep
+                </li>
+
+                <li>
+                    <i class="fas fa-history"></i>
+                    History
+                </li>
+
+                <li>
+                    <i class="fas fa-gear"></i>
+                    Settings
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <!-- ================= CONTENT ================= -->
+
+        <main class="content">
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section class="dashboard">
+
+                <h2>Dashboard</h2>
+
+                <div class="card-grid">
+
+                    <div class="card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Ask AI</h3>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-file-lines"></i>
+                        <h3>Summarize Notes</h3>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-list-check"></i>
+                        <h3>Generate MCQs</h3>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-clipboard-question"></i>
+                        <h3>Create Quiz</h3>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Interview Prep</h3>
+                    </div>
+
+                    <div class="card">
+                        <i class="fas fa-book"></i>
+                        <h3>Study Notes</h3>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= STATS ================= -->
+
+            <section class="stats-section">
+
+                <div class="stat-box">
+                    <h3>Questions Asked</h3>
+                    <span>25</span>
+                </div>
+
+                <div class="stat-box">
+                    <h3>MCQs Generated</h3>
+                    <span>12</span>
+                </div>
+
+                <div class="stat-box">
+                    <h3>Quizzes</h3>
+                    <span>8</span>
+                </div>
+
+                <div class="stat-box">
+                    <h3>Summaries</h3>
+                    <span>15</span>
+                </div>
+
+            </section>
+
+            <!-- ================= SUBJECT SETTINGS ================= -->
+
+            <section class="controls">
+
+                <select id="subject">
+                    <option>Java</option>
+                    <option>Python</option>
+                    <option>DBMS</option>
+                    <option>Operating System</option>
+                    <option>Computer Networks</option>
+                    <option>DSA</option>
+                </select>
+
+                <select id="difficulty">
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                </select>
+
+            </section>
+
+            <!-- ================= QUICK PROMPTS ================= -->
+
+            <section class="quick-prompts">
+
+                <button>Explain OOP</button>
+                <button>Generate MCQs</button>
+                <button>Create Quiz</button>
+                <button>Summarize Notes</button>
+                <button>Interview Questions</button>
+
+            </section>
+
+            <!-- ================= FILE UPLOAD ================= -->
+
+            <section class="upload-section">
+
+                <h2>Upload Notes</h2>
+
+                <div class="drop-zone">
+
+                    <i class="fas fa-cloud-upload-alt"></i>
+
+                    <p>Drag & Drop Notes Here</p>
+
+                    <input type="file" id="fileUpload">
+
+                </div>
+
+            </section>
+
+            <!-- ================= NOTES AREA ================= -->
+
+            <section class="notes-section">
+
+                <textarea
+                    id="promptInput"
+                    maxlength="2000"
+                    placeholder="Enter topic, notes, or ask a question..."></textarea>
+
+                <div class="counter">
+
+                    <span id="wordCount">Words: 0</span>
+
+                    <span id="charCount">0 / 2000</span>
+
+                </div>
+
+            </section>
+
+            <!-- ================= ACTION BUTTONS ================= -->
+
+            <section class="action-buttons">
+
+                <button id="askBtn">
+                    Ask AI
+                </button>
+
+                <button id="summaryBtn">
+                    Summarize
+                </button>
+
+                <button id="mcqBtn">
+                    Generate MCQ
+                </button>
+
+                <button id="quizBtn">
+                    Generate Quiz
+                </button>
+
+            </section>
+
+            <!-- ================= LOADER ================= -->
+
+            <section class="loader-section">
+
+                <div class="loader"></div>
+
+                <p>AI is thinking...</p>
+
+            </section>
+
+            <!-- ================= PROGRESS BAR ================= -->
+
+            <section class="progress-section">
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= CHAT ================= -->
+
+            <section class="chat-section">
+
+                <h2>AI Chat</h2>
+
+                <div class="chat-window" id="chatWindow">
+
+                    <div class="ai-message">
+
+                        <img src="assets/avatar.png" alt="AI">
+
+                        <div class="message-content">
+                            Hello! How can I help you today?
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= CHAT ACTIONS ================= -->
+
+            <section class="chat-actions">
+
+                <button id="copyBtn">
+                    <i class="fas fa-copy"></i>
+                    Copy
+                </button>
+
+                <button id="downloadBtn">
+                    <i class="fas fa-download"></i>
+                    Download
+                </button>
+
+                <button id="clearBtn">
+                    <i class="fas fa-trash"></i>
+                    Clear Chat
+                </button>
+
+            </section>
+
+            <!-- ================= RECENT HISTORY ================= -->
+
+            <section class="history-section">
+
+                <h2>Recent Activity</h2>
+
+                <input
+                    type="text"
+                    placeholder="Search history..."
+                    id="historySearch">
+
+                <ul>
+
+                    <li>Java OOP Notes</li>
+
+                    <li>Python Quiz</li>
+
+                    <li>DBMS MCQs</li>
+
+                    <li>OS Interview Questions</li>
+
+                </ul>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ================= PROFILE MODAL ================= -->
+
+    <div class="profile-modal">
+
+        <h2>User Profile</h2>
+
+        <input type="text" placeholder="Full Name">
+
+        <input type="text" placeholder="Course">
+
+        <input type="text" placeholder="Semester">
+
+        <button>Save</button>
+
+    </div>
+
+    <!-- ================= FLOATING AI BUTTON ================= -->
+
+    <button class="floating-ai-btn">
+
+        <i class="fas fa-robot"></i>
+
+    </button>
+
+    <!-- ================= FLOATING QUICK ACTIONS ================= -->
+
+    <div class="floating-actions">
+
+        <button>+ Ask AI</button>
+
+        <button>+ MCQ</button>
+
+        <button>+ Quiz</button>
+
+    </div>
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="toast">
+
+        Action Completed Successfully
+
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/download.js"></script>
+
+</body>
+</html>
